@@ -6,9 +6,9 @@ const Footer = () => {
     <div className="marvel-footer">
       <div className="marvel-footer-menu">
         <Link to="/">Home</Link>
-        <Link to="/characters">Characters</Link>
+        <Link to="/characters">Personnages</Link>
         <Link to="/comics">Comics</Link>
-        <Link to="/favorites">Favorites</Link>
+        <Link to="/favorites">Favoris</Link>
       </div>
       <div className="marvel-footer-made-by">
         Made by Simon JORDAN - Le Reacteur - 2023

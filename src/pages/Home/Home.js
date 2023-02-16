@@ -47,7 +47,7 @@ const Home = () => {
     <div className="home-main">
       {characters && (
         <div className="carousel">
-          <h2>Characters</h2>
+          <h2>Personnages</h2>
           <div className="carousel-inner">
             {characters.results.map((character, _id) => {
               return (
@@ -69,7 +69,7 @@ const Home = () => {
             })}
           </div>
           <Link to="/characters" className="see-more">
-            See more
+            Voir plus
           </Link>
         </div>
       )}
@@ -93,7 +93,7 @@ const Home = () => {
             })}
           </div>
           <Link to="/comics" className="see-more">
-            See more
+            Voir plus
           </Link>
         </div>
       )}

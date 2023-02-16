@@ -14,13 +14,13 @@ const Header = () => {
 
       <nav className="menu">
         <Link to="/characters" className="menu-item">
-          Characters
+          Personnages
         </Link>
         <Link to="/comics" className="menu-item">
           Comics
         </Link>
         <Link to="/favorites" className="menu-item">
-          Favorites
+          Favoris
         </Link>
       </nav>
     </div>
