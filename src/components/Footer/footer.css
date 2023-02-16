@@ -1,0 +1,30 @@
+.marvel-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  padding: 0 20px;
+  background-color: #ed1d24;
+  color: white;
+}
+
+.marvel-footer-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.marvel-footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.marvel-footer a:hover {
+  text-decoration: underline;
+}
+
+.marvel-footer-made-by {
+  font-size: 18px;
+  opacity: 0.8;
+}
