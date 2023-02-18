@@ -1,35 +1,59 @@
 import "../Comics/comics.css";
 
-const Comics = ({ comics, isLoading }) => {
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : (
-    <div className="comics-main">
-      <div className="comics-container">
-        <h2>Comics</h2>
-        <div className="comics-section">
-          {comics.results.map((comics, _id) => {
-            return (
-              <div key={comics._id} className="comics-card">
-                <div className="comics-img">
-                  <img
-                    src={
-                      comics.thumbnail.path + "." + comics.thumbnail.extension
-                    }
-                    alt={comics.name}
-                  />
-                </div>
-                <div className="comics-info">
-                  <p className="comics-name">{comics.name}</p>
-                  <p className="comics-description">{comics.description}</p>
-                </div>
-              </div>
-            );
-          })}
+// Components
+import Search from "../../components/Search/Search";
+import Card from "../../components/Card/Card";
+import PageShift from "../../components/PageShift/PageShift";
+
+const Comics = ({
+  comics,
+  isLoading,
+  handleComicsPageDecrease,
+  handleComicsPageIncrease,
+  currentComicsPage,
+  setCurrentComicsPage,
+  comicsSearch,
+  setComicsSearch,
+  handleComicsLike,
+}) => {
+  if (comics) {
+    const totalComics = comics.count;
+    // console.log(totalComics);
+    // console.log(comicsSearch);
+
+    return isLoading ? (
+      <p>Loading...</p>
+    ) : (
+      <div className="comics-main">
+        <Search
+          searchValue={comicsSearch}
+          setSearchValue={setComicsSearch}
+          setCurrentPage={setCurrentComicsPage}
+          placeholder="Trouves tes personnages préférés !"
+        />
+        <div className="comics-container">
+          <h2>Comics</h2>
+          <div className="comics-section">
+            {comics.results.map((comic, _id) => {
+              return (
+                <Card
+                  cardData={comic}
+                  handleLike={handleComicsLike}
+                  cardType="comics"
+                />
+              );
+            })}
+          </div>
         </div>
+        <PageShift
+          handlePageDecrease={handleComicsPageDecrease}
+          handlePageIncrease={handleComicsPageIncrease}
+          currentPage={currentComicsPage}
+          totalCount={totalComics}
+        />
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Comics;

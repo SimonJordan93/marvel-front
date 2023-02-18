@@ -1,3 +1,10 @@
+.characters-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .characters-container {
   border: 1px solid black;
   max-width: 1480px;
@@ -24,6 +31,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 0;
 }
 
 .character-card:hover {
@@ -35,13 +43,31 @@
 .character-img {
   /* border: 1px solid blue; */
   width: 100%;
-  height: 500px;
+  height: 600px;
   border-radius: 10px;
+  position: relative;
 }
 
 .character-img img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 10px;
+}
+
+.like-button {
+  position: absolute;
+  background-color: white;
+  top: 20px;
+  right: 20px;
+  border: 1px solid red;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.like-button:hover {
+  background-color: red;
 }

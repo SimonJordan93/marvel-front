@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../Header/header.css";
 import logo from "../../assets/img/MarvelLogo.svg_uw9pi8.png";
 
-const Header = () => {
+const Header = ({ handlePageChange, setCharactersSearch, setComicsSearch }) => {
   return (
     <div className="header">
       <Link to="/" className="menu-item">

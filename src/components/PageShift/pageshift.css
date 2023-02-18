@@ -1,0 +1,24 @@
+.page-shift {
+  /* border: 1px solid blue; */
+  height: 100px;
+  width: 600px;
+  margin: 50px auto;
+
+  display: flex;
+  gap: 20px;
+}
+
+.page-btn {
+  border: 2px solid red;
+  background-color: white;
+  color: red;
+  font-size: 24px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.page-btn:active {
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+}

@@ -31,7 +31,11 @@ const Home = ({ characters, comics, isLoading }) => {
               );
             })}
           </div>
-          <Link to="/characters" className="see-more">
+          <Link
+            to="/characters"
+            className="see-more"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Voir plus
           </Link>
         </div>
@@ -55,7 +59,11 @@ const Home = ({ characters, comics, isLoading }) => {
               );
             })}
           </div>
-          <Link to="/comics" className="see-more">
+          <Link
+            to="/comics"
+            className="see-more"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Voir plus
           </Link>
         </div>

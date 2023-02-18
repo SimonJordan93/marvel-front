@@ -29,7 +29,7 @@ const Character = () => {
           `https://site--marvel-back--6h6hqnm2zbqs.code.run/comics/${id}`
         );
         setComicFeatures(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       } catch (error) {
         console.log(error);
       }
