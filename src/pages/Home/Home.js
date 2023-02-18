@@ -1,46 +1,9 @@
 // Home.js
-
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import "../Home/home.css";
 
-const Home = () => {
-  const [characters, setCharacters] = useState();
-  const [comics, setComics] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+import { Link } from "react-router-dom";
 
-  useEffect(() => {
-    const fetchCharacters = async () => {
-      try {
-        const response = await axios.get(
-          "https://site--marvel-back--6h6hqnm2zbqs.code.run/characters?name=x"
-        );
-        setCharacters(response.data);
-        // console.log(characters);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const fetchComics = async () => {
-      try {
-        const response = await axios.get(
-          "https://site--marvel-back--6h6hqnm2zbqs.code.run/comics?title=x"
-        );
-        setComics(response.data);
-        // console.log(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchCharacters();
-    fetchComics();
-  }, []);
-
+const Home = ({ characters, comics, isLoading }) => {
   return isLoading ? (
     <p>Loading...</p>
   ) : (

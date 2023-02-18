@@ -1,0 +1,47 @@
+.comics-container {
+  border: 1px solid black;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.comics-container h2 {
+  font-size: 36px;
+}
+
+.comics-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 36px;
+}
+
+.comics-card {
+  /* border: 1px solid green; */
+  width: 400px;
+  border-radius: 10px;
+
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comics-card:hover {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.comics-img {
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.comics-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
