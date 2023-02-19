@@ -1,5 +1,6 @@
 // Home.js
 import "../Home/home.css";
+import Deadpool from "../../assets/img/deadpool-love.png";
 
 import { Link } from "react-router-dom";
 
@@ -21,9 +22,12 @@ const Home = ({ characters, comics, isLoading }) => {
                 >
                   <img
                     src={
-                      character.thumbnail.path +
-                      "." +
-                      character.thumbnail.extension
+                      character.thumbnail.path !==
+                      "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+                        ? character.thumbnail.path +
+                          "." +
+                          character.thumbnail.extension
+                        : Deadpool
                     }
                     alt={character.name}
                   />
@@ -48,7 +52,12 @@ const Home = ({ characters, comics, isLoading }) => {
               return (
                 <div key={comic._id} className="carousel-item">
                   <img
-                    src={comic.thumbnail.path + "." + comic.thumbnail.extension}
+                    src={
+                      comic.thumbnail.path !==
+                      "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+                        ? comic.thumbnail.path + "." + comic.thumbnail.extension
+                        : Deadpool
+                    }
                     alt={comic.title}
                   />
                 </div>

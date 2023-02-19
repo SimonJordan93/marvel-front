@@ -1,11 +1,17 @@
 import "../Card/card.css";
+import Deadpool from "../../assets/img/deadpool-love.png";
 
 const Card = ({ cardData, handleLike }) => {
   return (
     <>
       <div className="card-img">
         <img
-          src={`${cardData.thumbnail.path}.${cardData.thumbnail.extension}`}
+          src={
+            cardData.thumbnail.path !==
+            "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+              ? `${cardData.thumbnail.path}.${cardData.thumbnail.extension}`
+              : Deadpool
+          }
           alt={cardData.name || cardData.title}
         />
       </div>
