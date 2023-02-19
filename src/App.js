@@ -4,6 +4,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+
 // import Cookies from "js-cookie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -114,6 +115,7 @@ function App() {
     chararcterName,
     chararcterDesc
   ) => {
+    // console.log("handleCharacterLike called");
     if (characterImg && characterName && characterDesc) {
       setCharacterImg(chararcterImg);
       setCharacterName(chararcterName);
@@ -148,6 +150,8 @@ function App() {
       Cookies.remove("comicsDesc");
     }
   };
+
+  console.log(Cookies);
 
   return (
     <div className="App">
@@ -205,6 +209,8 @@ function App() {
                 characters={characters}
                 comics={comics}
                 isLoading={isLoading}
+                handleComicsLike={handleComicsLike}
+                handleCharacterLike={handleCharacterLike}
               />
             }
           />

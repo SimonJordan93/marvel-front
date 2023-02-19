@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const Character = () => {
+// Components
+import Card from "../../components/Card/Card";
+
+const Character = ({ handleComicsLike, handleCharacterLike }) => {
   const [character, setCharacter] = useState();
   const [comicFeatures, setComicFeatures] = useState();
   const params = useParams();
@@ -47,35 +50,15 @@ const Character = () => {
     <p>Loading...</p>
   ) : (
     <div className="charac-main">
-      <div key={character._id} className="charac-card">
-        <div className="charac-img">
-          <img
-            src={character.thumbnail.path + "." + character.thumbnail.extension}
-            alt={character.name}
-          />
-        </div>
-        <div className="charac-info">
-          <p className="charac-name">{character.name}</p>
-          <p className="charac-description">{character.description}</p>
-        </div>
+      <div className="item-card">
+        <Card cardData={character} handleLike={handleCharacterLike} />
       </div>
 
       <div className="comic-features-gallery">
         {comicFeatures.comics.map((comic, _id) => {
           return (
-            <div key={comic._id} className="comic-features-card">
-              <div className="comic-features-img">
-                <img
-                  src={comic.thumbnail.path + "." + comic.thumbnail.extension}
-                  alt={comic.title}
-                />
-              </div>
-              <div className="comic-features-info">
-                <h3 className="comic-features-title">{comic.title}</h3>
-                <div className="comic-features-description">
-                  <p>{comic.description}</p>
-                </div>
-              </div>
+            <div key={comic._id} className="item-card">
+              <Card cardData={comic} handleLike={handleComicsLike} />
             </div>
           );
         })}

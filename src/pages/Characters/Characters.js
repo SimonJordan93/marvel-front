@@ -35,18 +35,14 @@ const Characters = ({
         <div className="characters-container">
           <h2>Personnages</h2>
           <div className="characters-section">
-            {characters.results.map((character, index) => {
+            {characters.results.map((character, _id) => {
               return (
                 <Link
                   to={`/character/${character._id}`}
                   key={character._id}
-                  className="character-card"
+                  className="item-card"
                 >
-                  <Card
-                    cardData={character}
-                    handleLike={handleCharacterLike}
-                    cardType="character"
-                  />
+                  <Card cardData={character} handleLike={handleCharacterLike} />
                 </Link>
               );
             })}

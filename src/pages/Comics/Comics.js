@@ -36,11 +36,9 @@ const Comics = ({
           <div className="comics-section">
             {comics.results.map((comic, _id) => {
               return (
-                <Card
-                  cardData={comic}
-                  handleLike={handleComicsLike}
-                  cardType="comics"
-                />
+                <div className="item-card" key={comic._id}>
+                  <Card cardData={comic} handleLike={handleComicsLike} />
+                </div>
               );
             })}
           </div>

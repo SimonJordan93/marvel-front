@@ -1,7 +1,9 @@
-const Card = ({ cardData, handleLike, cardType }) => {
+import "../Card/card.css";
+
+const Card = ({ cardData, handleLike }) => {
   return (
-    <div className={`${cardType}-card`}>
-      <div className={`${cardType}-img`}>
+    <>
+      <div className="card-img">
         <img
           src={`${cardData.thumbnail.path}.${cardData.thumbnail.extension}`}
           alt={cardData.name || cardData.title}
@@ -20,11 +22,11 @@ const Card = ({ cardData, handleLike, cardType }) => {
           ❤️
         </button>
       </div>
-      <div className={`${cardType}-info`}>
-        <p className={`${cardType}-name`}>{cardData.name || cardData.title}</p>
-        <p className={`${cardType}-description`}>{cardData.description}</p>
+      <div className="card-info">
+        <p className="card-name">{cardData.name || cardData.title}</p>
+        <p className="card-description">{cardData.description}</p>
       </div>
-    </div>
+    </>
   );
 };
 
