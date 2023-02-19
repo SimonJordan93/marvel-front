@@ -21,17 +21,9 @@ const Card = ({ cardData, handleLike }) => {
           <button
             className="like-button"
             onClick={(event) => {
-              handleLike(
-                `${cardData.thumbnail.path}.${cardData.thumbnail.extension}`,
-                cardData.name || cardData.title,
-                cardData.description
-              );
+              handleLike(cardData._id);
               event.preventDefault();
-              // console.log(
-              //   `${cardData.thumbnail.path}.${cardData.thumbnail.extension}`
-              // );
-              // console.log(cardData.name || cardData.title);
-              // console.log(cardData.description);
+              console.log(cardData._id);
             }}
           >
             Favoris ❤️

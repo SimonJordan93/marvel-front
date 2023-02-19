@@ -42,10 +42,7 @@ const Characters = ({
                   key={character._id}
                   className="item-card"
                 >
-                  <Card
-                    cardData={character}
-                    handleLike={() => handleCharacterLike(character._id)}
-                  />
+                  <Card cardData={character} handleLike={handleCharacterLike} />
                 </Link>
               );
             })}
