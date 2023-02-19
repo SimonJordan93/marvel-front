@@ -3,7 +3,7 @@ import "./App.css";
 // Package imports
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 // import Cookies from "js-cookie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -35,8 +35,10 @@ function App() {
   const [comicsSearch, setComicsSearch] = useState("");
 
   // Character Cookies
+  const [likedCharacters, setLikedCharacters] = useState([]);
 
   // Comics Cookies
+  const [likedComics, setLikedComics] = useState([]);
 
   // Characters.js page change
   const skipCharacters = (currentCharactersPage - 1) * limit;
@@ -97,6 +99,10 @@ function App() {
     comicsSearch,
   ]);
 
+  const handleCharacterLike = (id) => {
+    setLikedCharacters((prevLikedCharacters) => [...prevLikedCharacters, id]);
+  };
+
   return (
     <div className="App">
       <Router>
@@ -126,6 +132,7 @@ function App() {
                 setCurrentCharactersPage={setCurrentCharactersPage}
                 charactersSearch={charactersSearch}
                 setCharactersSearch={setCharactersSearch}
+                handleCharacterLike={handleCharacterLike}
               />
             }
           />
@@ -154,7 +161,17 @@ function App() {
               />
             }
           />
-          <Route path="/favorite" element={<Favorite />} />
+          <Route
+            path="/favorite"
+            element={
+              <Favorite
+                characters={characters}
+                comics={comics}
+                likedCharacters={likedCharacters}
+                likedComics={likedComics}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </Router>

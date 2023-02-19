@@ -23,9 +23,9 @@
 
 .menu {
   /* border: 1px solid black; */
+  width: 60%;
   display: flex;
-  justify-content: center;
-  gap: 120px;
+  justify-content: space-between;
 }
 
 .menu-item {
@@ -41,4 +41,14 @@
 .menu-item:hover {
   background-color: white;
   color: #ed1d24;
+}
+
+@media (max-width: 769px) {
+  .menu-item {
+    font-size: 24px;
+  }
+
+  .menu {
+    width: 90%;
+  }
 }

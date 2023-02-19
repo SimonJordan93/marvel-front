@@ -41,7 +41,7 @@
 
 .desc-top {
   display: flex;
-  padding: 24px;
+  padding: 12px;
   align-items: center;
 }
 
@@ -52,11 +52,17 @@
   flex: 1;
 }
 
+.description-box {
+  height: 100px;
+  overflow-y: scroll;
+  margin: 20px;
+}
+
 .card-description {
   color: #fff;
   font-size: 18px;
   font-weight: bold;
-  padding: 10px;
+  line-height: 1.2;
 }
 
 .like-button {

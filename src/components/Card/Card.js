@@ -37,7 +37,9 @@ const Card = ({ cardData, handleLike }) => {
             Favoris ❤️
           </button>
         </div>
-        <p className="card-description">{cardData.description}</p>
+        <div className="description-box">
+          <p className="card-description">{cardData.description}</p>
+        </div>
       </div>
     </>
   );

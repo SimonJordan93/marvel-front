@@ -8,7 +8,7 @@
   height: 60px;
   border: none;
   border-radius: 1px;
-  outline: 20px solid rgb(172, 0, 0);
+  outline: 10px solid rgb(172, 0, 0);
 }
 
 ::placeholder {

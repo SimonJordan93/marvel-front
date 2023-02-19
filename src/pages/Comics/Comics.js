@@ -29,7 +29,7 @@ const Comics = ({
           searchValue={comicsSearch}
           setSearchValue={setComicsSearch}
           setCurrentPage={setCurrentComicsPage}
-          placeholder="Trouves tes comics préférés !"
+          placeholder="Trouve tes comics préférés !"
         />
         <div className="comics-container">
           <h2>Comics</h2>

@@ -30,7 +30,7 @@ const Characters = ({
           searchValue={charactersSearch}
           setSearchValue={setCharactersSearch}
           setCurrentPage={setCurrentCharactersPage}
-          placeholder="Trouves tes personnages préférés !"
+          placeholder="Trouve tes personnages préférés !"
         />
         <div className="characters-container">
           <h2>Personnages</h2>
@@ -42,7 +42,10 @@ const Characters = ({
                   key={character._id}
                   className="item-card"
                 >
-                  <Card cardData={character} handleLike={handleCharacterLike} />
+                  <Card
+                    cardData={character}
+                    handleLike={() => handleCharacterLike(character._id)}
+                  />
                 </Link>
               );
             })}
