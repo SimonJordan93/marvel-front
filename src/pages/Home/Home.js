@@ -46,16 +46,12 @@ const Home = ({ characters, comics, isLoading }) => {
           <div className="carousel-inner">
             {comics.results.map((comic, _id) => {
               return (
-                <Link
-                  to={`/comics/${comic._id}`}
-                  key={comic._id}
-                  className="carousel-item"
-                >
+                <div key={comic._id} className="carousel-item">
                   <img
                     src={comic.thumbnail.path + "." + comic.thumbnail.extension}
                     alt={comic.title}
                   />
-                </Link>
+                </div>
               );
             })}
           </div>

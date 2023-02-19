@@ -1,1 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Phudu:wght@400;500;700&display=swap");
+.App {
+  font-family: "Phudu", sans-serif;
+}

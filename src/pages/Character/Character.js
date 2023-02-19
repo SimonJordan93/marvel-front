@@ -50,10 +50,12 @@ const Character = ({ handleComicsLike, handleCharacterLike }) => {
     <p>Loading...</p>
   ) : (
     <div className="charac-main">
-      <div className="item-card">
-        <Card cardData={character} handleLike={handleCharacterLike} />
+      <div className="character-display">
+        <div className="item-card">
+          <Card cardData={character} handleLike={handleCharacterLike} />
+        </div>
       </div>
-
+      <h2>{character.name} apparaît dans :</h2>
       <div className="comic-features-gallery">
         {comicFeatures.comics.map((comic, _id) => {
           return (

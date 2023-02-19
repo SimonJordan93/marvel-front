@@ -1,4 +1,6 @@
 .characters-main {
+  background-image: url("../../assets/img/MarvelBack.jpg");
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,18 +8,31 @@
 }
 
 .characters-container {
-  border: 1px solid black;
+  /* border: 3px solid black; */
   max-width: 1480px;
   margin: 0 auto;
 }
 
 .characters-container h2 {
-  font-size: 36px;
+  border-radius: 10px;
+  background: rgb(172, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(172, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(172, 0, 0, 1) 100%
+  );
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 36px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .characters-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 36px;
 }

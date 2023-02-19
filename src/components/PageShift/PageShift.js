@@ -14,19 +14,19 @@ const PageShift = ({
             onClick={handlePageDecrease}
             className="previous-page page-btn"
           >
-            Previous
+            Précédent
           </button>
           <button onClick={handlePageIncrease} className="page-btn">
-            Next
+            Suivant
           </button>
         </>
       ) : currentPage === 1 && totalCount > 100 ? (
         <button onClick={handlePageIncrease} className="page-btn">
-          Next
+          Suivant
         </button>
       ) : totalCount - 100 > 100 ? (
         <button onClick={handlePageDecrease} className="page-btn">
-          Previous
+          Précédent
         </button>
       ) : null}
     </div>

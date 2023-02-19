@@ -3,7 +3,7 @@ import "./App.css";
 // Package imports
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 // import Cookies from "js-cookie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -24,32 +24,19 @@ function App() {
   const [characters, setCharacters] = useState();
   const [comics, setComics] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
   // Page Changes
   const [currentCharactersPage, setCurrentCharactersPage] = useState(1);
   const [currentComicsPage, setCurrentComicsPage] = useState(1);
   const limit = 100;
+
   // Page Searches
   const [charactersSearch, setCharactersSearch] = useState("");
   const [comicsSearch, setComicsSearch] = useState("");
+
   // Character Cookies
-  const [characterImg, setCharacterImg] = useState(
-    Cookies.get("characterImg") || null
-  );
-  const [characterName, setCharacterName] = useState(
-    Cookies.get("characterName") || null
-  );
-  const [characterDesc, setCharacterDesc] = useState(
-    Cookies.get("characterDesc") || null
-  );
 
   // Comics Cookies
-  const [comicsImg, setComicsImg] = useState(Cookies.get("comicsImg") || null);
-  const [comicsName, setComicsName] = useState(
-    Cookies.get("comicsName") || null
-  );
-  const [comicsDesc, setComicsDesc] = useState(
-    Cookies.get("comicsDesc") || null
-  );
 
   // Characters.js page change
   const skipCharacters = (currentCharactersPage - 1) * limit;
@@ -110,49 +97,6 @@ function App() {
     comicsSearch,
   ]);
 
-  const handleCharacterLike = (
-    chararcterImg,
-    chararcterName,
-    chararcterDesc
-  ) => {
-    // console.log("handleCharacterLike called");
-    if (characterImg && characterName && characterDesc) {
-      setCharacterImg(chararcterImg);
-      setCharacterName(chararcterName);
-      setCharacterDesc(chararcterDesc);
-      Cookies.set("characterImg", characterImg, { expires: 30 });
-      Cookies.set("characterName", characterName, { expires: 30 });
-      Cookies.set("characterDesc", characterDesc, { expires: 30 });
-    } else {
-      setCharacterImg(null);
-      setCharacterName(null);
-      setCharacterDesc(null);
-      Cookies.remove("characterImg");
-      Cookies.remove("characterName");
-      Cookies.remove("characterDesc");
-    }
-  };
-
-  const handleComicsLike = (chomicsImg, chomicsName, chomicsDesc) => {
-    if (comicsImg && comicsName && comicsDesc) {
-      setComicsImg(chomicsImg);
-      setComicsName(chomicsName);
-      setComicsDesc(chomicsDesc);
-      Cookies.set("comicsImg", comicsImg, { expires: 30 });
-      Cookies.set("comicsName", comicsName, { expires: 30 });
-      Cookies.set("comicsDesc", comicsDesc, { expires: 30 });
-    } else {
-      setComicsImg(null);
-      setComicsName(null);
-      setComicsDesc(null);
-      Cookies.remove("comicsImg");
-      Cookies.remove("comicsName");
-      Cookies.remove("comicsDesc");
-    }
-  };
-
-  console.log(Cookies);
-
   return (
     <div className="App">
       <Router>
@@ -182,7 +126,6 @@ function App() {
                 setCurrentCharactersPage={setCurrentCharactersPage}
                 charactersSearch={charactersSearch}
                 setCharactersSearch={setCharactersSearch}
-                handleCharacterLike={handleCharacterLike}
               />
             }
           />
@@ -198,7 +141,6 @@ function App() {
                 setCurrentComicsPage={setCurrentComicsPage}
                 comicsSearch={comicsSearch}
                 setComicsSearch={setComicsSearch}
-                handleComicsLike={handleComicsLike}
               />
             }
           />
@@ -209,24 +151,10 @@ function App() {
                 characters={characters}
                 comics={comics}
                 isLoading={isLoading}
-                handleComicsLike={handleComicsLike}
-                handleCharacterLike={handleCharacterLike}
               />
             }
           />
-          <Route
-            path="/favorite"
-            element={
-              <Favorite
-                characterImg={characterImg}
-                characterName={characterName}
-                characterDesc={characterDesc}
-                comicsImg={comicsImg}
-                comicsName={comicsName}
-                comicsDesc={comicsDesc}
-              />
-            }
-          />
+          <Route path="/favorite" element={<Favorite />} />
         </Routes>
         <Footer />
       </Router>

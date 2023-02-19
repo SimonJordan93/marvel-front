@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu:wght@400;500;700&display=swap");
+
 .search-input {
-  border: 1px solid black;
-  margin: 20px;
-  width: 30%;
-  height: 40px;
+  font-family: "Phudu", sans-serif;
+  font-size: 24px;
+  margin: 50px;
+  width: 40%;
+  height: 60px;
+  border: none;
+  border-radius: 1px;
+  outline: 20px solid rgb(172, 0, 0);
+}
+
+::placeholder {
+  font-size: 24px;
 }

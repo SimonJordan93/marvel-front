@@ -1,17 +1,36 @@
 .charac-main {
-  border: 1px solid black;
-  max-width: 1480px;
-  margin: 0 auto;
+  background-image: url("../../assets/img/MarvelBack.jpg");
+  background-size: cover;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 50px;
+}
+
+.charac-main h2 {
+  border-radius: 10px;
+  background: rgb(172, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(172, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(172, 0, 0, 1) 100%
+  );
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 36px 100px;
+}
+
+.character-display {
+  margin-top: 50px;
+  max-width: 1480px;
 }
 
 .comic-features-gallery {
   max-width: 90%;
-
   display: flex;
   overflow-x: scroll;
   gap: 30px;

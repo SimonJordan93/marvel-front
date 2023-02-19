@@ -1,25 +1,21 @@
 .item-card {
   /* border: 1px solid green; */
-  width: 400px;
+  width: 450px;
   border-radius: 10px;
+  text-decoration: none;
 
-  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  z-index: 0;
-}
+  /* gap: 20px; */
 
-.item-card:hover {
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  flex-shrink: 1;
 }
 
 .card-img {
   /* border: 1px solid blue; */
-  width: 400px;
-  height: 600px;
+
+  width: 450px;
+  height: 550px;
   border-radius: 10px;
   position: relative;
 }
@@ -28,22 +24,61 @@
   height: 100%;
   width: 100%;
   object-fit: fill;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-info {
+  position: relative;
+  background: rgb(172, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(172, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(172, 0, 0, 1) 100%
+  );
+  border-radius: 0 0 10px 10px;
+}
+
+.desc-top {
+  display: flex;
+  padding: 24px;
+  align-items: center;
+}
+
+.card-name {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  flex: 1;
+}
+
+.card-description {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .like-button {
-  position: absolute;
-  background-color: white;
-  top: 20px;
+  background: none;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  top: 25px;
   right: 20px;
-  border: 1px solid red;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
   z-index: 1;
 }
 
 .like-button:hover {
-  background-color: red;
+  background-color: white;
+  color: #ed1d24;
+}
+
+.like-button:active {
+  background-color: #ed1d24;
+  color: white;
 }

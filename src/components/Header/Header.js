@@ -8,7 +8,7 @@ import logo from "../../assets/img/MarvelLogo.svg_uw9pi8.png";
 const Header = ({ handlePageChange, setCharactersSearch, setComicsSearch }) => {
   return (
     <div className="header">
-      <Link to="/" className="menu-item">
+      <Link to="/">
         <img src={logo} alt="Marvel logo" className="logo" />
       </Link>
 

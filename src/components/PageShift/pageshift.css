@@ -1,5 +1,6 @@
 .page-shift {
   /* border: 1px solid blue; */
+
   height: 100px;
   width: 600px;
   margin: 50px auto;
@@ -9,16 +10,24 @@
 }
 
 .page-btn {
-  border: 2px solid red;
-  background-color: white;
-  color: red;
-  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(172, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(172, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(172, 0, 0, 1) 100%
+  );
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
   flex: 1;
   cursor: pointer;
 }
 
-.page-btn:active {
-  border: 2px solid red;
-  background-color: red;
-  color: white;
+.page-btn:hover {
+  background-color: white;
+  background: white;
+  color: #ed1d24;
 }
